@@ -1,0 +1,175 @@
+<html>
+<head>
+    <link rel="stylesheet" href="show.css">
+    <h1 style="background-color:black;height:150px;">
+        <div>
+            <img src="download.png">
+        </div>
+        </h1>
+        <h2>Book my show</h2>
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+    <link rel="stylesheet" href="bookmyshow.css">
+    <script src="bookmyshow.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <form action="/action_page.php">
+        <label for="tickettype">Choose a ticket:</label>
+        <select id="tickettype" name="tickettype" onchange="typeselection()">
+            <option value=""></option>
+          <option value="Standard">Standard</option>
+          <option value="premium">premium</option>
+        </select>
+      </form>
+      <form action="/action_page.php">
+        <label for="numberofseat">Choose number of ticket:</label>
+        <select id="numberofseat" name="numberofseat" onchange="numberofseats()">
+            <option value=""></option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+      </form>
+      <section style="float:right; width:30%; height:300px">
+        <h4>
+            Key to seat Layout:
+        </h4>
+        <div class="seat-status"></div>
+            <tr><td>  <div class="statustext1" ></div></td> 
+            <td>    <div>Booked</div></td></tr> 
+            <tr><td>    
+                <div class="statustext2"></div></td>
+              <td><div>Avilable</div></td>  </tr>
+              <tr><td>
+                
+                <div class="statustext3" ></div>
+                <div>Your Selection</div></td></tr>
+        </section>
+      <section id="seatlayoutbox" class="bkf-container _seat" style="display:block; width:60%;">
+   
+                    <div class="layout"  >
+                    <table cellspacing="4px" cellpadding="4px" class="setmain" >
+                        <tbody>
+                            <tr>
+                                <td class="PriceB1" >
+                                    <div class="seatP"><h1>Premium</h1></div>
+                                    </td>
+                            </tr>
+                            <tr>
+                            <td ><div class="seatR Setrow1">A</div></td>
+                            <td >
+                                   <td class="seat">
+                                    <script>
+                                        seats("A1",1,"premium")
+                                        </script>
+                                </td>
+                                <td><div>  </div></td>
+                                <td clas="seat">
+                                <script>
+                                    seats("A2",6,"premium")
+                                    </script>
+                                </td>    
+                            </tr>
+                            <tr>
+                                <td ><div class="seatR Setrow2">B</div></td>
+                                <td>
+                                       <td class="seat">
+                                        <script>
+                                            seats("B1",1,"premium")
+                                        </script>
+                                    </td>
+                                    <td><div>  </div></td>
+                                    <td class="seat">
+                                    <script>
+                                        seats("B2",6,"premium")
+                                        </script>
+                                    </td>    
+                                </tr>
+                                <tr>
+                                    <td class="PriceB2" >
+                                        <div class="seatP1"><h1>Standard</h1></div>
+                                        </td>
+                                </tr>
+                                <tr>
+                                    <td ><div class="seatR Setrow3">C</div></td>
+                                    <td style= "display: inline;font-size: 10px;line-height: 25px;font-weight: 400;background: #fff;">
+                                           <td class="seat">
+                                            <script>
+                                                seats("C1",1,"Standard")
+                                                </script>
+                                        </td>
+                                        <td><div>  </div></td>
+                                        <td class="seat">
+                                        <script>
+                                            seats("C2",6,"Standard")
+                                            </script>
+                                        </td>    
+                                    </tr>
+                                    <tr>
+                                        <td ><div class="seatR Setrow1">D</div></td>
+                                        <td style= "display: inline;font-size: 10px;line-height: 25px;font-weight: 400;background: #fff;">
+                                               <td class="seat">
+                                                <script>
+                                                    seats("D1",1,"Standard")
+        
+                                                    </script>
+                                            </td>
+                                            <td><div>  </div></td>
+                                            <td class="seat">
+                                            <script>
+                                                seats("D2",6,"Standard")
+                                               
+                                                </script>
+                                            </td>    
+                                        </tr>
+                                       </div>
+                        </tbody>
+   </table>
+
+    </section>
+<td>
+    <script>
+        function pre(){
+        var arr=[];
+var place=[];
+a=JSON.parse(localStorage.getItem('previous'));
+for(i=0;i<a.length;i++){
+   if(a[i]=="A1"||a[i]=="A2"||a[i]=="B1"||a[i]=="B2"||a[i]=="C1"||a[i]=="C2"||a[i]=="D1"||a[i]=="D2"){
+       ar[i]=a[i];
+   }
+}
+                                        let s=JSON.parse(localStorage.getItem('set'));
+                                        s=s.filter(Number);
+                                        console.log(s);
+                                        
+                                        review(ar,s);
+   function review(cls,plc){
+                                           for(let i=0;i<cls.length;i++){
+                                               if(cls[i]!=="selected"){
+                                                   try{
+                                               ele=document.getElementsByClassName(cls[i]);
+                                               ele[plc[i]].style.backgroundColor = "rgb(181, 179, 179)";
+                                               ele[plc[i]].setAttribute("class","bloked");
+                                            }
+                                            catch(err){
+
+                                            }
+                                               }
+                                           }
+                                               
+                                        }
+                                    }
+                                        
+                                        </script>
+    <button id="button" type="button" onclick="reset();" >proceed</body>
+    </div>
+    </body>
+</html>

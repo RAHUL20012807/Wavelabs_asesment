@@ -1,0 +1,24 @@
+div[name=premium]{
+    width: 25px;height: 25px;border: 1px solid #1ea83c;text-align: center;
+}
+div[name=Standard]{
+    width: 25px;height: 25px;border: 1px solid #1ea83c;text-align: center;
+}
+.statustext1{
+    display:flex; background-color:rgb(181, 179, 179); border-radius:2px; width:16px; height:16px; margin-left: 0;
+}
+.statustext2{
+    display:flex; background-color:#fff; border:1px solid #1ea83c; border-radius:2px; width:16px; height:16px; margin-left: 0;
+}
+.statustext3{
+    display:flex; background-color:#1ea83c; border-radius:2px; width:16px; height:16px; margin-left: 0;
+}
+.layout{
+    border-style: solid;box-sizing: 1px;border-color: black; width: 60%;
+}
+h2{
+    text-align:center;
+    border: #1ea83c;
+    background-color: aqua;
+    border-radius: 3px;
+}
